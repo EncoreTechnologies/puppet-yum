@@ -76,8 +76,8 @@ define yum::versionlock (
 
     $_versionlock = "${line_prefix}${name}"
   } else {
-    assert_type(Yum::RpmName, $name) |$_expected, $actual | {
-      fail("Package name must be formatted as Yum::RpmName, not \'${actual}\'. See Yum::Rpmname documentation for details.")
+    assert_type(Yum::RpmNameGlob, $name) |$_expected, $actual | {
+      fail("Package name must be formatted as Yum::RpmNameGlob, not \'${actual}\'. See Yum::RpmNameGlob documentation for details.")
     }
 
     assert_type(Yum::RpmVersion, $version) |$_expected, $actual | {
